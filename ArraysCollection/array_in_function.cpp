@@ -1,3 +1,5 @@
+// Code 1 :
+/*
 #include <iostream> // Includes the input/output library so we can use cout, cin, etc.
 
 using namespace std; // Allows us to write 'cout' instead of 'std::cout'
@@ -34,6 +36,7 @@ int main()
 
     return 0; // Exit the program successfully
 }
+*/
 
 // Concept	                    |    Explanation
 // int chai[]	                |   This is an array parameter, meaning you're passing an array into the function.
@@ -43,39 +46,47 @@ int main()
 // chaiServed[7] =              |    Declares and initializes the array with 7 specific values.
 // totalChaiServed(chaiServed, 7)|	Calls the function with the array and its size.
 
-// #include <iostream>
+// --------------------------------------------------------------------------------------------------------------------------
 
-// using namespace std;
+// Code 2 :
 
-// // Function to calculate total sum of an array (not used in this new approach but kept for reference)
-// int totalChaiServed(int chai[], int size) {
-//     int total = 0;
-//     for (int i = 0; i < size; i++) {
-//         total += chai[i];
-//     }
-//     return total;
-// }
+#include <iostream>
+using namespace std;
 
-// int main() {
-//     int chaiServed[7] = {50, 60, 55, 70, 65, 80, 75}; // Chai served each day
+// Function to calculate total sum of an array (not used in this new approach but kept for reference)
+int totalChaiServed(int chai[], int size)
+{
+    int total = 0;
+    for (int i = 0; i < size; i++)
+    {
+        total += chai[i];
+    }
+    return total;
+}
 
-//     int runningTotal = 0; // To keep track of cumulative chai served
+int main()
+{
+    int chaiServed[7] = {50, 60, 55, 70, 65, 80, 75}; // Chai served each day
 
-//     cout << "Cumulative chai served each day:\n";
-//     for (int i = 0; i < 7; i++) {
-//         runningTotal += chaiServed[i]; // Add today's chai to total
+    int runningTotal = 0; // To keep track of cumulative chai served
 
-//         // Print the expression part: 50 + 60 + 55...
-//         cout << "Total chai by day " << i + 1 << ": ";
-//         for (int j = 0; j <= i; j++) {
-//             cout << chaiServed[j];
-//             if (j < i)
-//                 cout << " + ";
-//         }
+    cout << "Cumulative chai served each day:\n";
+    for (int i = 0; i < 7; i++)
+    {
+        runningTotal += chaiServed[i]; // Add today's chai to total
 
-//         // Print the result
-//         cout << " = " << runningTotal << endl;
-//     }
+        // Print the expression part: 50 + 60 + 55...
+        cout << "Total chai by day " << i + 1 << ": ";
+        for (int j = 0; j <= i; j++)
+        {
+            cout << chaiServed[j];
+            if (j < i)
+                cout << " + ";
+        }
 
-//     return 0;
-// }
+        // Print the result
+        cout << " = " << runningTotal << endl;
+    }
+
+    return 0;
+}
